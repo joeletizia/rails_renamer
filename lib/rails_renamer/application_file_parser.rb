@@ -9,7 +9,7 @@ module RailsRenamer
       contents = file.read
 
       module_string = contents[/module .*$/]
-      module_name = module_string.gsub('module ', '')
+      module_string.gsub('module ', '')
     end
   end
 end
