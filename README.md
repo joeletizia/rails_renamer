@@ -1,9 +1,6 @@
-rails_renamer
-=============
-=======
 # RailsRenamer
 
-TODO: Write a gem description
+A gem to help you rename your Rails application after creating it. 
 
 ## Installation
 
@@ -21,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The easiest way to use the gem is to do the following:
+
+1. Add it to your application's Gemfile.
+2. Open the Rails console (rails c).
+3. Run the following command: `RailsRenamer.rename_current_application('./', new_application_name)` where `new_application_name` is your new desired app name.
 
 ## Contributing
 
