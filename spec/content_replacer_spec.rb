@@ -7,8 +7,9 @@ describe RailsRenamer::ContentReplacer do
     let(:file) { double(:file, read: file_contents, write: nil, close: nil) }
 
     before do
-      File.stub(:open).with('file/to/parse', 'r+') { file }
-      File.stub(:truncate).with('file/to/parse', 0)
+      File.stub(:open).with('file/to/parse', 'r') { file }
+      File.stub(:open).with('file/to/parse', 'w') { file }
+      File.stub(:delete)
     end
 
     it "replaces the existing file name with the given name" do
@@ -25,8 +26,8 @@ describe RailsRenamer::ContentReplacer do
       new_contents.should == "BAZ baz foo FOO Bar"  
     end
 
-    it "truncates the file" do
-      File.should_receive(:truncate).with('file/to/parse', 0)
+    it "deletes the file" do
+      File.should_receive(:delete)
       RailsRenamer::ContentReplacer.
         find_and_replace_application_name('file/to/parse', 'Foo', 'Bar')
     end
