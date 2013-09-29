@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["joe.letizia@gmail.com"]
   spec.description   = %q{Rename your rails project with ease.}
   spec.summary       = %q{Rename your rails project.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/joeletizia/rails_renamer"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

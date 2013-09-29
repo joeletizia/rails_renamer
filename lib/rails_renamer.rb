@@ -5,9 +5,6 @@ require 'rails_renamer/file_repository'
 require 'rails_renamer/file_iterator'
 require 'rails_renamer/content_replacer'
 
-require 'pry'
-
-
 module RailsRenamer
   def self.rename_current_application(application_root, new_app_name)
     application_file = application_root + RailsRenamer::FileRepository.application_file
